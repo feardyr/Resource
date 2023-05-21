@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TabsComponent } from '../composants/tabs/tabs.component';
 
 @Component({
   selector: 'app-home',

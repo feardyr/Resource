@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
+import { TabsComponent } from '../composants/tabs/tabs.component';
+//import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [

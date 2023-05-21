@@ -7,8 +7,9 @@
 
     <ion-toolbar>
       <ion-buttons slot="secondary">
-        <ion-button>
+        <ion-button [routerLink]="['/profil']">
           <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+          
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -16,67 +17,100 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
 <ion-card>
   <ion-card-header>
     <ion-card-title>Connexion a l'application</ion-card-title>
     <ion-card-subtitle>Veuillez saisir vos identifiants</ion-card-subtitle>
   </ion-card-header>
 
+
   <ion-card-content>
- <form action="post"></form>
-    <ion-item fill="solid">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" ngModel email></ion-input>
-      <ion-note slot="helper">Enter a valid email</ion-note>
-      <ion-note slot="error">Invalid email</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password </ion-label>      
-      <ion-input type="password" value=""></ion-input>
-    </ion-item>
-  
-    <ion-button  routerLink="/home">
-      <ion-icon slot="icon-only" name="log-in"></ion-icon>
-        Se connnecter
-    </ion-button>
-  </ion-card-content>
+    <h2>Connexion</h2>
+
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+    
+    <form (ngSubmit)="login()">
+      <ion-item>
+        <ion-label position="floating">Nom d'utilisateur</ion-label>
+        <ion-input [(ngModel)]='username' name="username" required></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+    
+      <ion-button expand="full" type="submit">Se connecter</ion-button>
+    </form>
+<!--
+      <form action="post">
+         <ion-item fill="solid">
+           <ion-label position="floating">Emfdfdfdail</ion-label>
+           <ion-input type="email"  ngModel email required  name="email"></ion-input>
+           <ion-note slot="helper">Enter a valid email</ion-note>
+           <ion-note slot="error">Invalid email</ion-note>
+         </ion-item>
+         <ion-item>
+           <ion-label position="floating">Password </ion-label>      
+           <ion-input type="password" name="password" value="" required="password"></ion-input>
+         </ion-item>
+       
+         <ion-button (click)="connexion()" type="submit" color="danger">
+           <ion-icon slot="icon-only" name="log-in"></ion-icon>
+             Se connnecter
+         </ion-button>
+        </form>
+        -->
+        
+      </ion-card-content>
+    
+    <!--
+
+      <ion-card-header>
+        <ion-card-title>Bienvenu dans (Re)source relationnelles </ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Ici un text présentent l'application
+      </ion-card-content>
 </ion-card>
 
-</ion-content>
+<ion-card>
+<ion-card-header>
+  <ion-card-title>Bienvenu dans (Re)source relationnelles </ion-card-title>
+  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content>
+  Ici un text présentent l'application
+</ion-card-content>
+</ion-card>
+<ion-card-header>
+  <ion-card-title>Bienvenu dans (Re)source relationnelles </ion-card-title>
+  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content>
+  Ici un text présentent l'application
+</ion-card-content>
+
+<form  name="test"method="post" action="home.html">
+  <input type="text" value="name" id="name" name="name" required>
+  <button type="submit" name="test" >scscscs</button>
+</form>
 
 
-<ion-content>
 
-  <ion-content contendId="main-tabs">
+
+
   
-    <ion-tabs contendId="main-tabs">
-    
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
-          <ion-icon name="play-circle"></ion-icon>
-          Listen Now
-        </ion-tab-button>
-        <ion-tab-button tab="radio">
-          <ion-icon name="radio"></ion-icon>
-          Radio
-        </ion-tab-button>
-        <ion-tab-button tab="library">
-          <ion-icon name="library"></ion-icon>
-          Library
-        </ion-tab-button>
-        <ion-tab-button tab="search">
-          <ion-icon name="search"></ion-icon>
-          Search
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
   
   </ion-content>
+
   
-  </ion-content>
-  
-<!--
 <ion-content>
   <form class="form card">
     <div class="card_header">

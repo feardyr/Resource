@@ -1,26 +1,12 @@
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-      <ion-title>Home</ion-title>
 
-    </ion-buttons>
-
-    <ion-toolbar>
-      <ion-buttons slot="secondary">
-        <ion-button>
-          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<ion-content [fullscreen]="true">
 
   <ion-card>
-    <img alt="image de  (Re)source relationnelles" src="/Resource/src/assets/icon/favicon.png" />
+   <!-- <img alt="image de  (Re)source relationnelles" src=".../src/assets/icon/favicon.png" />
+    -->
+    <ion-img src="https://raw.githubusercontent.com/feardyr/Resource/master/src/assets/icon/favicon.png" alt="image de  (Re)source relationnelles"></ion-img>
+
     <ion-card-header>
       <ion-card-title>Bienvenu dans (Re)source relationnelles </ion-card-title>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
@@ -29,37 +15,60 @@
     <ion-card-content>
       Ici un text présentent l'application
     </ion-card-content>
+  
   </ion-card>
-  
-  </ion-content>
-  
+  <ion-card>
 
-<ion-content>
+  <ion-card-header>
+    <ion-card-title>Voici une Ressource Populaire </ion-card-title>
+    <ion-card-subtitle>Le titre de la ressource</ion-card-subtitle>
+  </ion-card-header>
 
-<ion-content contendId="main-tabs">
+  <ion-card-content>
+    Ici la description d'une ressource par exemple
+  </ion-card-content>
 
-  <ion-tabs contendId="main-tabs">
-  
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-        <ion-icon name="play-circle"></ion-icon>
-        Listen Now
-      </ion-tab-button>
-      <ion-tab-button tab="radio">
-        <ion-icon name="radio"></ion-icon>
-        Radio
-      </ion-tab-button>
-      <ion-tab-button tab="library">
-        <ion-icon name="library"></ion-icon>
-        Library
-      </ion-tab-button>
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Search
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+</ion-card>
+
+
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>Voici une Autre Ressource Populaire </ion-card-title>
+    <ion-card-subtitle>Le titre de la ressource</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Ici la description d'une ressource par exemple
+  </ion-card-content>
+  <ion-button   color="primary">
+    <ion-icon slot="icon-only" name=""></ion-icon>
+    Consulter
+  </ion-button>
+
+</ion-card>
+
+
 
 </ion-content>
 
-</ion-content>
+
+  
+<ion-header [translucent]="true" ContentId="main"> 
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-title>Home</ion-title>
+
+    </ion-buttons>
+
+      <ion-buttons slot="secondary">
+        <ion-button [routerLink]="['/profil']">
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
