@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
+import { TabsComponent } from '../tabs/tabs.component';
+import { TabsModule } from '../tabs/tabs.module';
 
 @NgModule({
   imports: [
@@ -14,6 +16,8 @@ import { LoginPage } from './login.page';
     ReactiveFormsModule,
     IonicModule,
     LoginPageRoutingModule,
+    TabsModule
+    
   ],
   declarations: [LoginPage]
 })

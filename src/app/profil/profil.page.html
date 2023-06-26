@@ -11,38 +11,16 @@
           <ion-icon slot="icon-only" name="person-circle"></ion-icon>
         </ion-button>
       </ion-buttons>
+      <ion-buttons slot="secondary">
+        <ion-button [routerLink]="['/login']">
+          <ion-icon name="log-in-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
 
-<ion-footer  ContentId="main">
-  <ion-toolbar>
-
-    <ion-tabs contendId="main-tabs">
-    
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
-          <ion-icon name="play-circle"></ion-icon>
-          Listen Now
-        </ion-tab-button>
-        <ion-tab-button tab="radio">
-          <ion-icon name="radio"></ion-icon>
-          Radio
-        </ion-tab-button>
-        <ion-tab-button tab="library">
-          <ion-icon name="library"></ion-icon>
-          Library
-        </ion-tab-button>
-        <ion-tab-button tab="search">
-          <ion-icon name="search"></ion-icon>
-          Search
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
-  </ion-toolbar>
-
-</ion-footer>
 <ion-router-outlet id="main"></ion-router-outlet>
 
 <ion-content [fullscreen]="true">
@@ -64,6 +42,11 @@
           Nom utilisateur
         </ion-card-title>        
         <ion-input type="text"  name="nom" required value="nom utilisateur"></ion-input>
+        
+        <ion-card-title>
+          Prénom utilisateur
+        </ion-card-title>        
+        <ion-input type="text"  name="prenom" required value="prenom utilisateur"></ion-input>
 
         <ion-card-title>
           Ici un text présentent l'application
@@ -76,7 +59,7 @@
         <ion-input type="mail"  name="mail" required value="mail"></ion-input>
 
         <ion-card-title>
-          Ici un text présentent l'application
+          Ici un css text présentent l'application
 </ion-card-title>        <ion-input type="text"  name="text" required value="text"></ion-input>
 
 </ion-card-header>
@@ -85,4 +68,7 @@
   
 
 </ion-content>
+<ion-footer  ContentId="main">
+  <app-tabs></app-tabs>
+</ion-footer>
 

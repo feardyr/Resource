@@ -15,6 +15,8 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
     { title: 'Login', url: '/login', icon: 'log-in' },
     { title: 'Profil', url: '/profil', icon: 'person-circle' },
+    { title: 'Register', url: '/regsiter', icon: 'warning' },
+
 
 
 

@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { TabsComponent } from '../composants/tabs/tabs.component';
+import { TabsModule } from '../tabs/tabs.module';
 //import { LoginPage } from './login.page';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TabsComponent } from '../composants/tabs/tabs.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TabsModule
   ],
   declarations: [HomePage]
 })

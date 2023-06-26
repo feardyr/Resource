@@ -1,64 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
-//import * as jwt from 'jsonwebtoken';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  styleUrls: ['./login.page.scss']
 })
 export class LoginPage implements OnInit {
+  credentials = {
+    email: 'saimon@devdactic.com',
+    pw: '123'
+  };
 
-  /*
-  const secretKey = 'YOUR_SECRET_KEY';
-const payload = { userId: '123', username: 'john.doe' };
-const options = { expiresIn: '1h' };
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private alertCtrl: AlertController
+  ) {}
 
-const token = jwt.sign(payload, secretKey, options);
-*/
-  
-  password = "";
-  error =" ";
-
-  username ="";
-
-  constructor(private router: Router) {}
+  ngOnInit() {}
 
   login() {
-    // Vérification des informations de connexion (exemple simple)
-    if (this.username === 'admin' && this.password === 'password') {
-      // Connexion réussie, redirection vers la page d'accueil
-      
-         // Génération du token JWT
-         const secretKey = 'YOUR_SECRET_KEY';
-         const payload = { username: this.username };
-         const options = { expiresIn: '1h' };
-   
-        // const token = jwt.sign(payload, secretKey, options);
-   
-         // Stockage du token dans le stockage local
-      // localStorage.setItem('token', token);
-      this.router.navigate(['/home']);
+    this.auth.login(this.credentials).subscribe(async res => {
+      if (res) {
+        this.router.navigateByUrl('/home');
     } else { 
-      // Informations de connexion incorrectes
-      this.error = 'Nom d\'utilisateur ou mot de passe incorrect.';
+        const alert = await this.alertCtrl.create({
+          header: 'Login Failed',
+          message: 'Wrong credentials.',
+          buttons: ['OK']
+        });
+        await alert.present();
     }
+    });
+  }  
+
   }
-
-
-  favoriteColorControl = new FormControl('');
-
-  navigate(){
-    this.router.navigate(['/detail'])
-  }
-
-  connexion(){
-    
-    this.router.navigate(['home'])
-  }
-
-  ngOnInit() {
-  }
-
-}
