@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() { /* TODO document why this method 'ngOnInit' is empty */ }
 
   login() {
     this.auth.login(this.credentials).subscribe(async res => {

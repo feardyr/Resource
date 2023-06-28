@@ -11,7 +11,7 @@ import { TLSSocket } from 'tls';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicStorageModule } from "@ionic/storage";
 import { HttpClientModule } from "@angular/common/http";
-//import * as jwt from 'jsonwebtoken';
+
 @NgModule({
   declarations: [AppComponent,],
   imports: [BrowserModule,

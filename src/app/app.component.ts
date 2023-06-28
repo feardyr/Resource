@@ -27,5 +27,5 @@ export class AppComponent {
 
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor() { /* TODO document why this constructor is empty */ }
 }
