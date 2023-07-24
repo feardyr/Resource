@@ -25,7 +25,8 @@ export class AppComponent {
   public appBar=[
     { url: '/profil', icon: 'person-circle' },
 
+
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders',];
   constructor() { /* TODO document why this constructor is empty */ }
 }
