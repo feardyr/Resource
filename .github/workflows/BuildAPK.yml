@@ -8,12 +8,6 @@ on:
       - 'v*'
 
 jobs:
-  build:
-    name: Build gradlew
-    runs-on: ubuntu-latest
-    steps:
-    - name: RUN BUID
-      run: bash ./android/gradlew init  --stacktrace
   
   test:
     name: Run Unit Tests
@@ -25,8 +19,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: build
+        run: bash ./android/gradlew init  --stacktrace
       - name: Run Tests
-        run: bash ./android/gradlew test --stacktrace  
+        run: bash ./android/gradlew test --stacktrace 
+        
   apk:
     name: Generate APK
     needs: test
