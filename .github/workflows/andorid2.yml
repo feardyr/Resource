@@ -1,8 +1,5 @@
 name: Android CI2
 
-env:
-  main_project_module: app
-  playstore_name: Frogobox ID
 
 on:
   push:
