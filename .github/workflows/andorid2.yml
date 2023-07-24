@@ -92,4 +92,3 @@ jobs:
           name: trivy-results
           path: 'trivy-results.txt'
 
-```
