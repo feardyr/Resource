@@ -8,6 +8,13 @@ on:
       - 'v*'
 
 jobs:
+  build:
+    name: Build gradlew
+    runs-on: ubuntu-latest
+    steps:
+    - name: RUN BUID
+      run: bash ./android/gradlew init  --stacktrace
+  
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
