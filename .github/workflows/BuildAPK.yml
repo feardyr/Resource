@@ -21,7 +21,8 @@ jobs:
           java-version: 1.8
       - name: build
         run: bash ./android/gradlew init  --stacktrace
-    
+      - name: Run Tests
+        run: bash ./android/gradlew test --stacktrace 
         
   apk:
     name: Generate APK
