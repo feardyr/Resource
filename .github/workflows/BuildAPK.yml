@@ -22,7 +22,7 @@ jobs:
       - name: Set repository name as env variable
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       - name: Afficher le contenu du répertoire
-        run: ls -la
+        run: ls 
       - name: Run Tests
         run: bash ./android/gradlew test --stacktrace 
         
