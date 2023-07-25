@@ -19,10 +19,20 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: build
-        run: bash ./android/gradlew init  --stacktrace
+      - name: Set repository name as env variable
+        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      - name: Afficher le contenu du répertoire
+        run: ls 
+   
+      - name: Afficher le répertoire de travail actuel
+        run: pwd
+      - name: List directory contents
+        run: ls /home/runner/work/Resource/Resource
+
       - name: Run Tests
-        run: bash ./android/gradlew test --stacktrace 
+        run: bash /home/runner/work/Resource/Resource/android/gradlew test --stacktrace
+      - name: Run Tests
+        run: bash ${{ github.workspace }}/android/gradlew test --stacktrace 
         
   apk:
     name: Generate APK
