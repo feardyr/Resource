@@ -25,6 +25,8 @@ jobs:
         run: ls 
       - name : repertoire android
         run: cd android
+      - name: Afficher le répertoire de travail actuel
+        run: pwd
       - name: Run Tests
         run: bash gradlew test --stacktrace 
         
