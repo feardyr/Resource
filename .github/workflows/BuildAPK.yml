@@ -23,8 +23,7 @@ jobs:
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       - name: Afficher le contenu du répertoire
         run: ls 
-      - name : repertoire android
-        run: cd android
+   
       - name: Afficher le répertoire de travail actuel
         run: pwd
       - name: Run Tests
