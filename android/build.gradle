@@ -1,5 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+plugins {
+    // ...
+    id 'de.clashsoft.angular-gradle' version '0.1.7'
+}
+
+angular {
+    appDir = 'src/main/app' // root directory of your Angular app
+    outputDir = "$appDir/dist/$project.name" // output directory of Angular build. Default assumes Angular project has the same name as the gradle project.
+    packageManager = /* result of `ng config cli.packageManager`, plus .cmd on Windows) */'' // for installing packages prior to Angular build
+    packageManagerArgs = [ 'install' ] // arguments for installing packages, passed to package manager
+    buildArgs = [ 'build', hasProperty('angular-dev') ? '--configuration=gradle' : '--prod' ]
+}
 buildscript {
     
     repositories {
@@ -9,7 +21,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.0'
         classpath 'com.google.gms:google-services:4.3.15'
-        testImplementation 'junit:junit:4.12'
+       
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
