@@ -27,7 +27,7 @@ jobs:
       - name: Afficher le répertoire de travail actuel
         run: pwd
       - name: Run Tests
-        run: bash ./android/gradlew test --stacktrace 
+        run: bash ${{ github.workspace }}/android/gradlew test --stacktrace 
         
   apk:
     name: Generate APK
