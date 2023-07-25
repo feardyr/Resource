@@ -26,6 +26,11 @@ jobs:
    
       - name: Afficher le répertoire de travail actuel
         run: pwd
+      - name: List directory contents
+        run: ls /home/runner/work/Resource/Resource
+
+      - name: Run Tests
+        run: bash /home/runner/work/Resource/Resource/android/gradlew test --stacktrace
       - name: Run Tests
         run: bash ${{ github.workspace }}/android/gradlew test --stacktrace 
         
