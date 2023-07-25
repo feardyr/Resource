@@ -23,7 +23,7 @@ jobs:
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 
       - name: Run Tests
-        run: bash ./android/gradlew test --stacktrace 
+        run: bash ./gradlew test --stacktrace 
         
   apk:
     name: Generate APK
