@@ -33,8 +33,7 @@ jobs:
           build-type: debug
           environment: MyEnvironment
           upload-artifact: Android-Build.zip
-      - name: Trigger Mobile Builds with Appflow
-        uses: ionic-team/appflow-build@v1.0.4
+     
 
       - name: Set repository name as env variable
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
