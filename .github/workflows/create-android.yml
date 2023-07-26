@@ -39,8 +39,6 @@ jobs:
 
       
 
-      - name: Capacitor update
-        run: npx cap update
 
       - name: Capacitor copy
         run: npx cap copy
