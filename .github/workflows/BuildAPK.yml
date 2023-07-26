@@ -24,8 +24,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: capacitor-android-action
-        uses: Narottam04/action-capacitor-android@v1.0.0    
+          
+      - name: Trigger Mobile Builds with Appflow
+        uses: ionic-team/appflow-build@v1.0.4
+
       - name: Set repository name as env variable
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       - name: Afficher le contenu du répertoire
