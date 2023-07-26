@@ -38,7 +38,7 @@ jobs:
 
       - name: Build
         run: |
-         ionic cordova build android --prod
+         ionic capacitor build android
 
       - name: ionic sync
         uses: ./Ressource/ng.cmd run app:build
