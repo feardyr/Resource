@@ -27,6 +27,19 @@ jobs:
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       - name: Afficher le contenu du répertoire
         run: ls 
+      - name: Use coturiv/setup-ionic
+        uses: coturiv/setup-ionic@v1
+        with:
+          java-version: 8
+      - name: Use coturiv/setup-ionic
+        uses: coturiv/setup-ionic@v1
+        with:
+          cordova-version: 8
+
+      - name: Build
+        run: |
+         ionic cordova build android --prod
+
       - name: ionic sync
         uses: ./Ressource/ng.cmd run app:build
       - name: ionic build
