@@ -28,7 +28,7 @@ jobs:
       - name: Afficher le contenu du répertoire
         run: ls 
       - name: ionic sync
-        uses: ./Ressource/ionic cap sync
+        uses: ./Ressource/ng.cmd run app:build
       - name: ionic build
         uses: ./Ressource/ionic cap build
       - name: Afficher le répertoire de travail actuel
