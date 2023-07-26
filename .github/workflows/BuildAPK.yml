@@ -42,15 +42,15 @@ jobs:
         run: |
          ionic capacitor build android
 
-      - name: ionic sync
-        uses: ./Ressource/ng.cmd run app:build
-      - name: ionic build
-        uses: ./Ressource/ionic cap build
+     
       - name: Afficher le répertoire de travail actuel
         run: pwd
       - name: List directory contents
         run: ls /home/runner/work/Resource/Resource
-
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
       - name: Run Tests
         run: bash /home/runner/work/Resource/Resource/android/gradlew test --stacktrace
       - name: Run Tests
