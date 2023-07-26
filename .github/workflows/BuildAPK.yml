@@ -35,7 +35,9 @@ jobs:
         uses: coturiv/setup-ionic@v1
         with:
           cordova-version: 8
-
+      - name : install capacitor
+        run: | 
+          npm i -D @capacitor/cli
       - name: Build
         run: |
          ionic capacitor build android
